@@ -554,6 +554,11 @@
     "description": "The treeview component is a user interface that is used to represent hierarchical data in a tree structure.",
     "keywords": "treeview, vuetify treeview component, vue treeview component"
   },
+  "components/typography": {
+    "title": "Typography component",
+    "description": "The typography component provides a simple interface to configure available typography helper classes, similar to [Grid components](/components/grids/).",
+    "keywords": "typography component"
+  },
   "components/windows": {
     "title": "Window component",
     "description": "The window component is a wrapper container that allows transitioning between content. It serves as the baseline for tabs and carousels.",
