@@ -244,18 +244,12 @@ export default VSelect.extend({
     deleteCurrentItem () {
       if (this.readonly) return
 
-      const index = this.selectedItems.length - 1
-
-      if (this.selectedIndex === -1 && index !== 0) {
-        this.selectedIndex = index
-        return
-      }
-
-      const currentItem = this.selectedItems[this.selectedIndex]
+      const currentIndex = this.selectedItems.length - 1
+      const currentItem = this.selectedItem || this.selectedItems[currentIndex]
 
       if (this.getDisabled(currentItem)) return
 
-      const newIndex = this.selectedIndex === index
+      const newIndex = this.selectedIndex === currentIndex
         ? this.selectedIndex - 1
         : this.selectedItems[this.selectedIndex + 1]
           ? this.selectedIndex
@@ -267,6 +261,7 @@ export default VSelect.extend({
         this.selectItem(currentItem)
       }
 
+      this.$emit('item:deleted', currentItem)
       this.selectedIndex = newIndex
     },
     clearableCallback () {
